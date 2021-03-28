@@ -1,5 +1,6 @@
 package com.reflect;
 
+import com.reflect.entity.Person;
 import com.serializable.demo.Student;
 import org.junit.Test;
 
@@ -7,7 +8,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class ReflectDemo {
 
@@ -62,6 +62,15 @@ public class ReflectDemo {
         age.set(student, 12);
 
         System.out.println(age.getInt(student));
+    }
+
+    @Test
+    public void testGetFunction() throws Exception {
+        Class<Person> personClass = Person.class;
+        Method show = personClass.getDeclaredMethod("show", String.class);
+        show.setAccessible(true);
+        Object invoke = show.invoke(personClass.newInstance(), "哈哈哈哈");
+        System.out.println("返回值：" + invoke);
     }
 
 }

@@ -1,6 +1,5 @@
 package com.collection.list;
 
-import com.serializable.demo.Student;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -66,7 +65,7 @@ public class SetDemo {
 
     @Test
     public void test3() {
-        Set<Student<Integer>> students = new HashSet<>();
+//        Set<Student<Integer>> students = new HashSet<>();
     }
 
 }

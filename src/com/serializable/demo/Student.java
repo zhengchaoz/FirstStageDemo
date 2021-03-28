@@ -7,13 +7,19 @@ import java.util.Objects;
  * @author
  * @date 2021-03-17-9:38
  */
-public class Student<T> implements Serializable {
+public class Student<T> implements Serializable, Comparable<Student> {
 
     private static final long serialVersionUID = 1517969386166628546L;
     private String name;
     private int age;
     private int sex;
     private T score;
+
+    @Override
+    public int compareTo(Student student) {
+        return Integer.compare(age, student.getAge());
+//        return -Integer.compare(age, integer); 倒序
+    }
 
 
     public Student() {
